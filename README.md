@@ -1,8 +1,7 @@
 # Jump-to-python-
 
 Jump to pytho book: https://wikidocs.net/book/1
-   
-예제 입니다.
+
 ============
 GFM은
 —
