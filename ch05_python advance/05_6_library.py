@@ -19,15 +19,15 @@ sys.path.append("C:/Python/Mymodules") #로 path를 추가할 수 있다.
 #객체를 그 상태 그대로 파일에 저장하고 싶을 때(pickle)
 #저장
 import pickle
-f = open("test.txt", 'wb')
+f = open("pickle_test.p", 'wb')
 data = {1:'python', 2:'you need'}
 pickle.dump(data, f)
 f.close()
-#text.txt 파일을 쓰기모드로 열고, 딕셔너리 객체이 data를 그대로 f에 저장하는 방법이다.
+#text.p 파일을 쓰기모드로 열고, 딕셔너리 객체이 data를 그대로 f에 저장하는 방법이다.
 #pickle.dump 메소드를 사용한다.
 #불러오기
 import pickle
-f = open('text.txt', 'rb')
+f = open('pickle_test.p', 'rb')
 data = pickle.load(f)
 print(data)
 #어떤 자료형이든지 상관없이 자정하고 불러올 수 있다.
@@ -41,8 +41,8 @@ print(os.environ['PATH'])
 
 #디렉토리에 대한 것들(os.chdir, os.getcwd)
 #현재 디렉토리의 위치를 변경, 얻을 수 있다.
-os.chdir("C:WINDOWS") #os. change directory 인듯 하다.
-os.getcwd() #os. get current working directory 인듯 하다.
+os.chdir("C:WINDOWS") #os. change directory.
+os.getcwd() #os. get current working directory.
 
 #시스템 명령(os.system, os.popen)
 #os.system : 시스템의 유틸리티나 기타 명령어들을 파이썬에서 호출 할 수 있다. 
@@ -84,7 +84,7 @@ time.time() # ~~~~~~~
 
 #time.localtime : time.time()에 의해 반환된 실수값을 이용해 년도, 달, 월, 시, 분, 초 ... 의 형태로 바꾸어주는 함수이다.
 time.localtime(time.time())
-time.struct_time(tm_year=2013, tm_mon=5, tm_mday=21, tm_hour=16, tm_min=48, tm_sec=42, tm_wday=1, tm_yday=141, tm_isdst=0)
+#time.struct_time(tm_year=2013, tm_mon=5, tm_mday=21, tm_hour=16, tm_min=48, tm_sec=42, tm_wday=1, tm_yday=141, tm_isdst=0)
 
 #time.asctime : time.localtime에 의해 반환된 터플형태의 값을 인수로 받아서 알아보기 쉬운 날짜와 시간 형태의 값을 반환한다.
 time.asctime(time.localtime(time.time())) #'Sat Apr 28 20:50:20 2001'
@@ -95,7 +95,7 @@ time.ctime() #'Sat Apr 28 20:50:20 2001'
 #time.strftime : 시간에 관계된 것을 세밀하게 표현할 수 있는 여러가지 포맷코드를 제공
 #여러가지가 있다. 용도에 맞게 사용하면 도니다.
 import time
-time.strftime('%x', time.localtime(time.time())) #'05/01/01' %x : 현재 설정된 로케일에 기반한 날짜 출력. 06/01/01
+time.strftime('%x', time.localtime(time.time())) #'05/01/01' %x : 현재 설정된 로케일에 기반한 날짜 출력. 05/01/01
 time.strftime('%c', time.localtime(time.time())) #'05/01/01 17:22:21'  %c : 날짜와 시간을 출력.
 
 #time.sleep : 루프 안에서 많이 쓰임. 일정시간 간격을 주기 위해 사용된다.
@@ -108,8 +108,8 @@ for i in range(10):
 
 #달력쓰기(calender)
 import calendar
-print(calendar.calendar(2016))
-calendar.prcal(2016) #이 둘은 같은 결과를 보여준다.
+print(calendar.calendar(2017))
+calendar.prcal(2017) #이 둘은 같은 결과를 보여준다.
 #2001년 4월만 보기
 calendar.prmonth(2001, 4)
 
@@ -164,6 +164,7 @@ for msg in ['you', 'need' 'python']:
 	t = threading.Thread(target=say, args=(msg,))
 	t.daemon = True
 	t.start()
+
 #0.1초마다 0부터 99까지 숫자를 출력한다. 이부분이 메인프로그램이 되며 메인 프로그램이 종료되는 순간 생성된 스레드들도 함께 종료된다.
 #t.deamon = True와 같이 daemon 플래그를 설정해주면 주 프로그램이 종료되는 순간 데몬 스레드가 함께 종료된다.
 for i in range(100):
