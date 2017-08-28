@@ -28,9 +28,6 @@ while money:
 		print("커피가 다 떨어졌습니다.")
 		break
 
-		
-# -*- coding: utf-8 -*- 
-# coffee.py
 
 coffee = 10
 while True:
