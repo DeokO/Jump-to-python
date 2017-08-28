@@ -74,10 +74,3 @@ from ..sound.echo import echo_test #game 디렉토리는 sound와 graphic이 동
 def render_test():
 	print("render")
 	echo_test()
-
-
-
-
-
-
-
