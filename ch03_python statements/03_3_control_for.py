@@ -1,18 +1,19 @@
 #제어문_for문
 #for 변수 in 리스트 :
+#위의 형태로 for를 사용할 수 있다.
 
 test_list = ['one', 'two', 'three']
 for i in test_list:
 	print(i)
 
-mark = [90, 25, 67, 45, 80]
-num = 0
-for i in mark:
-	num += 1
-	if i>= 60 :
-		print("%d번 학생은 합격입니다." %num)
-	else:
-		print("%d번 학생은 불합격입니다." %num)
+	mark = [90, 25, 67, 45, 80]
+	num = 0
+	for i in mark:
+		num += 1
+		if i >= 60:
+			print("%d번 학생은 합격입니다." % num)
+		else:
+			print("%d번 학생은 불합격입니다." % num)
 
 #for와 continue
 #continue를 만나면 for문의 증감문으로 직행한다.
@@ -32,8 +33,8 @@ for i in range(1, 11):
 print(sum)
 
 mark = [90, 25, 67, 45, 80]
-for i in range(len(marks)):
-	if marks[i] < 60 : continue
+for i in range(len(mark)):
+	if mark[i] < 60 : continue
 	print("%d번 학생은 합격입니다." %(i+1))
 
 #다양한 for문의 사용
