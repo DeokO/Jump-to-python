@@ -34,7 +34,7 @@ say()
 #입력값이 몇개가 될지 모르는 때는 어떻게?
 #def 함수이름(*입력변수):
 #	수행문장
-def sum_many(*args): #args가 변수 입력값을 모아서 튜플로 만들어준다. *python뭐 이렇게 바꿔도 상관없다.
+def sum_many(*args): #args가 변수 입력값을 모아서 튜플로 만들어준다. *python 이렇게 바꿔도 상관없다.
 	sum=0
 	for i in args:
 		sum = sum+i
@@ -44,7 +44,7 @@ print(result)
 result = sum_many(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 print(result)
 
-def sum_mul(choice, *args):
+def sum_mul(choice, *args): #*을 이용할때는 제일 뒤쪽에 적어줘야 한다. 맨앞의 것은 choice, 그다음부터는 *args에 해당한다라고 이해할 수 있다.
 	if choice == "sum":
 		result = 0
 		for i in args:
@@ -92,8 +92,8 @@ def say_myself(name, old, man=True): #man인수를 디폴트로 트루를 줬다
 		print("남자입니다.")
 	else:
 		print('여자입니다.')
-say_myself('박응용', 27)
-say_myself('박응용', 27, True) #이 두 결과는 같다.
+say_myself('덕오', 27)
+say_myself('덕오', 27, True) #이 두 결과는 같다.
 
 #입력값 초기치 설정시 주의사항
 #다음과 같이 하면 에러가 난다.
@@ -106,7 +106,7 @@ def say_myself(name, man=True, old): #위 함수와는 순서만 바뀐 함수
 		print('여자입니다.')
 #SyntaxError: non-default argument follows default argument 이 에러가 난다.
 #초기치를 설정한 인수는 초기치 없는것들 뒤에 나와야 한다.
-say_myself('박응용', 27) #이렇게 하면 27을 man에 넣을지, old에 넣을지 모르기 때문이다.
+say_myself('덕오', 27) #이렇게 하면 27을 man에 넣을지, old에 넣을지 모르기 때문이다.
 
 
 #함수 내에서 선언된 변수의 효력 범위
@@ -115,6 +115,8 @@ def vartest(a):
 	a = a+1
 vartest(a)
 print(a) #1이 출력된다 함수 안의 변수는 함수 안에서만 정의된다.
+
+del a
 def vartest(a):
 	a = a+1
 vartest(3)
