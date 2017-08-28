@@ -74,7 +74,7 @@ except FileNotFoundError:
 
 
 ##에러 발생시키기(raise)
-#Bird라는 클래스를 상속받는 자식 클래스는 반드시 fly라는 함수를 구현하게 말들고 싶은 경우가 있을 수 있다.
+#Bird라는 클래스를 상속받는 자식 클래스는 반드시 fly라는 함수를 구현하게 만들고 싶은 경우가 있을 수 있다.
 class Bird:
 	def fly(self):
 		raise NotImplementedError #NotImplementedError는 파이썬 내장 에러로 구현되지 않았을 때 발생시키는 에러로 사용한다.
@@ -82,16 +82,10 @@ class Eagle(Bird):
 	pass 
 eagle = Eagle()
 eagle.fly()
-#Eagle에서는 Bird 클래스의 fly함수를 구현하지 않았기 때문에 Bird의 fly()함수가 호출되어 raise문에의해 NotImplementedError 오류가 발생할 것이다.
+#Eagle에서는 Bird 클래스의 fly함수를 구현하지 않았기 때문에 Bird의 fly()함수가 호출되어 raise문에 의해 NotImplementedError 오류가 발생할 것이다.
 #NotImplementedError를 발생시키지 않으려면 Eagle 클래스에 fly함수를 구현해야 한다.
 class Eagle(Bird):
 	def fly(self):
 		print("very fast")
 eagle = Eagle()
 eagle.fly()
-
-
-
-
-
-
