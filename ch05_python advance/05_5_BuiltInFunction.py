@@ -46,12 +46,12 @@ eval("'hi' + 'a'") #hia
 eval('divmod(4, 3)') #(1, 1)
 
 #filter(function, iterable) : 함수와 반복가능한 자료형(리스트, 튜플, 문자열)을 입력으로 받아서 반복자료형의 값이 하나씩 함수에 인수로 전달될 때, 
-#참을 반환시키는 값만을 따로 모아서 리턴하는 함수이다. for문의 역할을 할 수 있는 듯 하다.
+#참을 반환시키는 값만을 따로 모아서 리턴하는 함수이다. for문의 역할을 할 수 있다.
 #positive.py
 def positive(l):
 	result = []
 	for i in l:
-		if l>0:
+		if i>0:
 			result.append(i)
 	return result
 print(positive([1, -3, 2, 0, -5, 6])) #[1, 2, 6]이 출력된다. 양수만 출력되는 효과
@@ -60,7 +60,7 @@ def positive(x):
 	return x>0
 print(list(filter(positive, [1, -3, 2, 0, -5, 6]))) 
 #positive라는 함수에 해당 리스트를 통째로 넣고 이 리스트를 for문 돌리듯이 하나씩 탐색해가며 함수 적용.
-#결과를 list로 받는다.
+#조건에 부합하는 원소에 해당하는 결과를 list로 받는다.
 
 #hex(x) : 정수값을 받아서 16진수값으로 돌려준다.
 print(hex(234)) #0xea
@@ -147,7 +147,7 @@ print(oct(12345)) #'0o30071'
 #w:쓰기, r:읽기, a:추가, b:바이너리 모드
 #w+, r+, a+는 파일을 업데이트 할 용도로 사용된다.
 #b는 w, r, a와 함께 사용된다.
-f = open("binary_bile", 'rb') #바이너리 읽기모드
+# f = open("binary_bile", 'rb') #바이너리 읽기모드. 생략
 
 #ord(c) : 문자의 아스키 값을 돌려준다. (chr의 반대)
 print(ord('a')) #97
@@ -200,17 +200,9 @@ print(type([])) #<class 'list'>
 print(type(open('test', 'w'))) #<class '_io.TextIOWrapper'>
 
 #zip(iterable) : 동일한 개수의 요소 값을 갖는 반복 가능한 자료형을 묶어주는 역할을 한다.
-#위치별로 따오는 함수인것 같다. 튜플로 각각 묶고, 리스트로 묶어서 반환한다.
+#위치별로 따오는 함수. 튜플로 각각 묶고, 리스트로 묶어서 반환한다.
 list(zip([1, 2, 3], [4, 5, 6])) #[(1, 4), (2, 5), (3, 6)]
 list(zip([1, 2, 3], [4, 5, 6], [7, 8, 9])) #[(1, 4, 7), (2, 5, 8), (3, 6, 9)]
 list(zip("abc", "def")) #[('a', 'd'), ('b', 'e'), ('c', 'f')]
-
-
-
-
-
-
-
-
 
 
