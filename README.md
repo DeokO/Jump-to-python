@@ -7,14 +7,23 @@ Jump to pytho book: https://wikidocs.net/book/1
 Jump to python 자료를 따라 python 문법을 공부했던 내용입니다.
 
 ## Ch01: Introduction to python
-* Introduction
+1. Introduction
 
 ## Ch02: Python basic, type
-* Numeric
-* String
-* list
-* tuple
-* dictionary
-* set
-* Boolean
-* variable
+1. numeric
+2. string
+3. list
+4. tuple
+5. dictionary
+6. set
+7. boolean
+8. variable
+
+## Ch03: Python statements
+1. if
+2. while
+3. for
+
+## Ch04: Input and Output
+1. InputAndOutput_function
+2. InputAndOutput_file
